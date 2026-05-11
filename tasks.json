@@ -1,0 +1,357 @@
+{
+  "project": "jiangui-resume",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-11",
+  "epics": [
+    {
+      "id": "E1",
+      "title": "Project Setup & Infrastructure",
+      "priority": "critical",
+      "stories": [
+        {
+          "id": "E1-S1",
+          "title": "Initialize Next.js project with full toolchain",
+          "priority": "critical",
+          "estimateHours": 1,
+          "acceptanceCriteria": [
+            "pnpm create next-app with TypeScript, Tailwind, App Router",
+            "ESLint + Prettier configured with strict rules",
+            "Git repository initialized with .gitignore",
+            "pnpm install runs without errors"
+          ],
+          "subtasks": [
+            { "id": "E1-S1-T1", "title": "Run create-next-app scaffold", "status": "pending" },
+            { "id": "E1-S1-T2", "title": "Configure tsconfig.json (strict mode)", "status": "pending" },
+            { "id": "E1-S1-T3", "title": "Configure tailwind.config.ts with custom tokens", "status": "pending" },
+            { "id": "E1-S1-T4", "title": "Configure ESLint + Prettier + lint-staged", "status": "pending" },
+            { "id": "E1-S1-T5", "title": "Configure path aliases (@/components, @/data, @/lib)", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E1-S2",
+          "title": "Define resume data model and populate content",
+          "priority": "critical",
+          "estimateHours": 2,
+          "acceptanceCriteria": [
+            "TypeScript interfaces defined for all resume entities",
+            "All resume content from 前端工程师简历.md imported",
+            "Data exported as typed constants from /data/resume.ts"
+          ],
+          "subtasks": [
+            { "id": "E1-S2-T1", "title": "Create types/resume.ts with ResumeData, Experience, Project, Skill interfaces", "status": "pending" },
+            { "id": "E1-S2-T2", "title": "Populate data/resume.ts with full resume content", "status": "pending" },
+            { "id": "E1-S2-T3", "title": "Add contact links data (email, GitHub, LinkedIn)", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E1-S3",
+          "title": "Configure Next.js metadata and SEO",
+          "priority": "high",
+          "estimateHours": 1,
+          "acceptanceCriteria": [
+            "layout.tsx has full Metadata export",
+            "Open Graph image configured",
+            "JSON-LD Person schema in head",
+            "robots.txt generated",
+            "sitemap.xml generated"
+          ],
+          "subtasks": [
+            { "id": "E1-S3-T1", "title": "Create app/layout.tsx with Metadata API", "status": "pending" },
+            { "id": "E1-S3-T2", "title": "Create JSON-LD Person schema component", "status": "pending" },
+            { "id": "E1-S3-T3", "title": "Create app/robots.ts and app/sitemap.ts", "status": "pending" },
+            { "id": "E1-S3-T4", "title": "Add Open Graph meta tags", "status": "pending" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "title": "Layout Components",
+      "priority": "critical",
+      "stories": [
+        {
+          "id": "E2-S1",
+          "title": "Build sticky navigation bar",
+          "priority": "critical",
+          "estimateHours": 2,
+          "acceptanceCriteria": [
+            "Fixed header visible on all scroll positions",
+            "Smooth anchor-scroll to all 6 sections",
+            "Mobile hamburger menu opens/closes correctly",
+            "Active section highlighted in nav"
+          ],
+          "subtasks": [
+            { "id": "E2-S1-T1", "title": "Create components/layout/Navbar.tsx", "status": "pending" },
+            { "id": "E2-S1-T2", "title": "Implement mobile drawer with Framer Motion", "status": "pending" },
+            { "id": "E2-S1-T3", "title": "Implement active section detection with IntersectionObserver", "status": "pending" },
+            { "id": "E2-S1-T4", "title": "Add skip-to-content accessibility link", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E2-S2",
+          "title": "Build footer component",
+          "priority": "medium",
+          "estimateHours": 0.5,
+          "acceptanceCriteria": [
+            "Copyright text rendered",
+            "Back-to-top button scrolls to top",
+            "Social links render correctly"
+          ],
+          "subtasks": [
+            { "id": "E2-S2-T1", "title": "Create components/layout/Footer.tsx", "status": "pending" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "title": "Page Sections",
+      "priority": "critical",
+      "stories": [
+        {
+          "id": "E3-S1",
+          "title": "Hero Section",
+          "priority": "critical",
+          "estimateHours": 3,
+          "acceptanceCriteria": [
+            "Full-viewport height layout",
+            "Name, title, tagline visible",
+            "Two CTA buttons with correct anchor targets",
+            "Framer Motion fade-in + slide-up animation on mount",
+            "Gradient or particle background (CSS-only)"
+          ],
+          "subtasks": [
+            { "id": "E3-S1-T1", "title": "Create components/sections/Hero.tsx", "status": "pending" },
+            { "id": "E3-S1-T2", "title": "Add animated gradient background", "status": "pending" },
+            { "id": "E3-S1-T3", "title": "Animate text with Framer Motion stagger", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E3-S2",
+          "title": "About / Summary Section",
+          "priority": "high",
+          "estimateHours": 1.5,
+          "acceptanceCriteria": [
+            "4 metric cards rendered with icons",
+            "Prose summary paragraph displayed",
+            "Scroll-triggered animation"
+          ],
+          "subtasks": [
+            { "id": "E3-S2-T1", "title": "Create components/sections/About.tsx", "status": "pending" },
+            { "id": "E3-S2-T2", "title": "Create components/ui/MetricCard.tsx", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E3-S3",
+          "title": "Skills Section",
+          "priority": "high",
+          "estimateHours": 2,
+          "acceptanceCriteria": [
+            "All 8 skill categories displayed",
+            "Each skill rendered as a pill/badge",
+            "Category labels styled distinctly",
+            "Hover animation on skill tags"
+          ],
+          "subtasks": [
+            { "id": "E3-S3-T1", "title": "Create components/sections/Skills.tsx", "status": "pending" },
+            { "id": "E3-S3-T2", "title": "Create components/ui/SkillBadge.tsx", "status": "pending" },
+            { "id": "E3-S3-T3", "title": "Implement skill category grouping logic", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E3-S4",
+          "title": "Work Experience Section",
+          "priority": "critical",
+          "estimateHours": 3,
+          "acceptanceCriteria": [
+            "5 experience entries in reverse chronological order",
+            "Vertical timeline with connector line",
+            "Company, role, dates, bullet points all visible",
+            "Metrics in bullet points visually highlighted",
+            "Scroll-triggered stagger animation per entry"
+          ],
+          "subtasks": [
+            { "id": "E3-S4-T1", "title": "Create components/sections/Experience.tsx", "status": "pending" },
+            { "id": "E3-S4-T2", "title": "Create components/ui/ExperienceCard.tsx", "status": "pending" },
+            { "id": "E3-S4-T3", "title": "Create components/ui/Timeline.tsx connector component", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E3-S5",
+          "title": "Projects Section",
+          "priority": "critical",
+          "estimateHours": 4,
+          "acceptanceCriteria": [
+            "4 project cards in responsive grid",
+            "Each card: title, description, tech badges, outcome metric",
+            "Modal/expandable detail panel on click",
+            "Tech stack badges colored by category",
+            "Hover lift animation"
+          ],
+          "subtasks": [
+            { "id": "E3-S5-T1", "title": "Create components/sections/Projects.tsx", "status": "pending" },
+            { "id": "E3-S5-T2", "title": "Create components/ui/ProjectCard.tsx", "status": "pending" },
+            { "id": "E3-S5-T3", "title": "Create components/ui/ProjectModal.tsx", "status": "pending" },
+            { "id": "E3-S5-T4", "title": "Implement modal open/close with Framer Motion AnimatePresence", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E3-S6",
+          "title": "Education Section",
+          "priority": "medium",
+          "estimateHours": 0.5,
+          "acceptanceCriteria": [
+            "University name, degree, and date displayed",
+            "Consistent styling with Experience section"
+          ],
+          "subtasks": [
+            { "id": "E3-S6-T1", "title": "Create components/sections/Education.tsx", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E3-S7",
+          "title": "Contact Section",
+          "priority": "high",
+          "estimateHours": 2,
+          "acceptanceCriteria": [
+            "Email, GitHub links visible",
+            "Copy-to-clipboard button works with toast feedback",
+            "Static contact form renders with validation",
+            "Form submission triggers mailto fallback"
+          ],
+          "subtasks": [
+            { "id": "E3-S7-T1", "title": "Create components/sections/Contact.tsx", "status": "pending" },
+            { "id": "E3-S7-T2", "title": "Create components/ui/CopyButton.tsx with toast", "status": "pending" },
+            { "id": "E3-S7-T3", "title": "Create components/ui/ContactForm.tsx with validation", "status": "pending" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "title": "Testing",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "E4-S1",
+          "title": "Unit tests — UI components",
+          "priority": "high",
+          "estimateHours": 3,
+          "acceptanceCriteria": [
+            "MetricCard, SkillBadge, ProjectCard, ExperienceCard have snapshot + behavior tests",
+            "CopyButton clipboard test passes with mock",
+            "ContactForm validation tests cover required fields and format errors",
+            "Coverage > 80% for components/"
+          ],
+          "subtasks": [
+            { "id": "E4-S1-T1", "title": "Configure Jest + React Testing Library + jest-environment-jsdom", "status": "pending" },
+            { "id": "E4-S1-T2", "title": "Write tests/__tests__/components/MetricCard.test.tsx", "status": "pending" },
+            { "id": "E4-S1-T3", "title": "Write tests/__tests__/components/SkillBadge.test.tsx", "status": "pending" },
+            { "id": "E4-S1-T4", "title": "Write tests/__tests__/components/ProjectCard.test.tsx", "status": "pending" },
+            { "id": "E4-S1-T5", "title": "Write tests/__tests__/components/CopyButton.test.tsx", "status": "pending" },
+            { "id": "E4-S1-T6", "title": "Write tests/__tests__/components/ContactForm.test.tsx", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E4-S2",
+          "title": "Integration tests — page sections",
+          "priority": "high",
+          "estimateHours": 2,
+          "acceptanceCriteria": [
+            "Each page section renders without crashing with real data",
+            "Navigation links resolve to correct section IDs",
+            "Hero CTA buttons have correct href targets"
+          ],
+          "subtasks": [
+            { "id": "E4-S2-T1", "title": "Write tests/__tests__/sections/Hero.test.tsx", "status": "pending" },
+            { "id": "E4-S2-T2", "title": "Write tests/__tests__/sections/Experience.test.tsx", "status": "pending" },
+            { "id": "E4-S2-T3", "title": "Write tests/__tests__/sections/Projects.test.tsx", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E4-S3",
+          "title": "E2E tests — Playwright",
+          "priority": "medium",
+          "estimateHours": 3,
+          "acceptanceCriteria": [
+            "Homepage loads with status 200",
+            "All nav links scroll to correct sections",
+            "Project card modal opens and closes",
+            "Copy email button writes to clipboard",
+            "Mobile viewport: hamburger menu opens and closes",
+            "Lighthouse CI score thresholds met"
+          ],
+          "subtasks": [
+            { "id": "E4-S3-T1", "title": "Configure Playwright with chromium + mobile viewports", "status": "pending" },
+            { "id": "E4-S3-T2", "title": "Write e2e/homepage.spec.ts (page load, title, sections visible)", "status": "pending" },
+            { "id": "E4-S3-T3", "title": "Write e2e/navigation.spec.ts (anchor scroll, active state)", "status": "pending" },
+            { "id": "E4-S3-T4", "title": "Write e2e/projects.spec.ts (card click, modal open/close)", "status": "pending" },
+            { "id": "E4-S3-T5", "title": "Write e2e/mobile.spec.ts (hamburger menu, responsive layout)", "status": "pending" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "title": "CI/CD & Deployment",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "E5-S1",
+          "title": "GitHub Actions CI workflow",
+          "priority": "high",
+          "estimateHours": 1.5,
+          "acceptanceCriteria": [
+            "Workflow triggers on push to main and all PRs",
+            "Jobs: lint → typecheck → unit-test → build → e2e",
+            "Build artifacts cached between jobs",
+            "pnpm cache configured for fast installs",
+            "Status badge in README"
+          ],
+          "subtasks": [
+            { "id": "E5-S1-T1", "title": "Create .github/workflows/ci.yml", "status": "pending" },
+            { "id": "E5-S1-T2", "title": "Configure pnpm cache in actions", "status": "pending" },
+            { "id": "E5-S1-T3", "title": "Add Playwright install step with cache", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E5-S2",
+          "title": "Vercel deployment configuration",
+          "priority": "high",
+          "estimateHours": 0.5,
+          "acceptanceCriteria": [
+            "vercel.json present with framework and output settings",
+            "Environment variable placeholders documented",
+            "Preview deployments on PRs enabled"
+          ],
+          "subtasks": [
+            { "id": "E5-S2-T1", "title": "Create vercel.json with Next.js config", "status": "pending" },
+            { "id": "E5-S2-T2", "title": "Document required env vars in .env.example", "status": "pending" }
+          ]
+        },
+        {
+          "id": "E5-S3",
+          "title": "GitHub Actions CD — auto-deploy to Vercel",
+          "priority": "medium",
+          "estimateHours": 1,
+          "acceptanceCriteria": [
+            "Merge to main triggers production deploy via Vercel CLI",
+            "Deploy URL posted as PR comment",
+            "Rollback possible via Vercel dashboard"
+          ],
+          "subtasks": [
+            { "id": "E5-S3-T1", "title": "Add deploy job to ci.yml using amondnet/vercel-action", "status": "pending" },
+            { "id": "E5-S3-T2", "title": "Configure VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID secrets", "status": "pending" }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalEpics": 5,
+    "totalStories": 15,
+    "totalSubtasks": 49,
+    "estimatedTotalHours": 32,
+    "criticalPath": ["E1-S1", "E1-S2", "E2-S1", "E3-S1", "E3-S4", "E3-S5", "E4-S3", "E5-S1", "E5-S2"]
+  }
+}
